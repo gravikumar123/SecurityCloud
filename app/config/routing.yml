@@ -1,0 +1,3 @@
+sc_main:
+    resource: "@SCMainBundle/Resources/config/routing.yml"
+    prefix:   /

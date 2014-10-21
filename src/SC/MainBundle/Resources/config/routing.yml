@@ -1,0 +1,8 @@
+sc_index:
+    path:     /hello/{name}
+    defaults: { _controller: SCMainBundle:Default:index }
+
+
+sc_admin_index:
+    path:     /admin/
+    defaults: { _controller: SCMainBundle:Admin:index }
