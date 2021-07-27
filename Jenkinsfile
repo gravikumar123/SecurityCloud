@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        dependencyCheck()
+        dependencyCheck(odcInstallation: 'Dependency Checker')
       }
     }
 
