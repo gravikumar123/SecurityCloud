@@ -6,6 +6,12 @@ pipeline {
         echo 'building the application....'
       }
     }
+    stage('SonarQube Analysis') {
+    def mvn = tool 'Default Maven';
+    withSonarQubeEnv() {
+      sh "${mvn}/bin/mvn sonar:sonarQube"
+    }
+    }
       stage("test") {
       steps {
         echo 'test the application....'
