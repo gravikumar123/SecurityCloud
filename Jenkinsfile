@@ -1,11 +1,22 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage("build") {
       steps {
-        dependencyCheck(odcInstallation: 'Dependency Checker')
+        echo 'building the application....'
+      }
+      stage("test") {
+      steps {
+        echo 'test the application....'
+      }
+        stage("deploy") {
+      steps {
+        echo 'deploy the application....'
+      }
+          stage("clean") {
+      steps {
+        echo 'clean the application....'
       }
     }
-
   }
 }
