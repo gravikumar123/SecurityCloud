@@ -7,9 +7,11 @@ pipeline {
       }
     }
     stage("SonarQube") {
-    def mvn = tool 'maven';
+      steps{
+      def mvn = tool 'maven';
     withSonarQubeEnv() {
       sh "${mvn}/bin/mvn sonar:SonarQube"
+    }
     }
     }
     stage("test") {
